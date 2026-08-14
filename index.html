@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formations IA — Packs PDF (Maîtrisez les LLM, Agents IA, Prompt Engineering...)</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; background:#070b14; color:#e8ecf5; }
+  .hero { text-align:center; padding:3.5rem 1.5rem 2rem; background:linear-gradient(160deg,#0b1220,#0e1628); border-bottom:1px solid rgba(255,255,255,.07); }
+  .hero h1 { font-size:clamp(1.8rem,4.5vw,2.8rem); background:linear-gradient(120deg,#5eead4,#38bdf8,#818cf8); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero p { color:#9fb0c9; margin-top:.8rem; max-width:640px; margin-left:auto; margin-right:auto; }
+  .badge { display:inline-block; background:rgba(56,189,248,.12); border:1px solid rgba(56,189,248,.3); color:#7dd3fc; border-radius:999px; padding:.35rem 1rem; font-size:.8rem; margin-bottom:1rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.2rem; padding:2.5rem 6vw; max-width:1200px; margin:0 auto; }
+  .card { background:rgba(15,21,38,.7); border:1px solid rgba(255,255,255,.09); border-radius:18px; padding:1.6rem; display:flex; flex-direction:column; transition:transform .2s, border-color .2s; }
+  .card:hover { transform:translateY(-4px); border-color:rgba(56,189,248,.4); }
+  .card h3 { font-size:1.15rem; margin-bottom:.4rem; color:#dbeafe; }
+  .card .promise { color:#9fb0c9; font-size:.9rem; flex:1; }
+  .price { margin-top:1rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+  .price .pdf { font-size:1.25rem; font-weight:700; color:#7dd3fc; }
+  .price .complet { font-size:.85rem; color:#8b98b0; text-decoration:line-through; }
+  .price .promo { font-size:.85rem; color:#5eead4; }
+  .btn { display:inline-block; margin-top:.9rem; text-align:center; padding:.7rem 1.2rem; border-radius:10px; background:linear-gradient(120deg,#0ea5e9,#6366f1); color:#fff; text-decoration:none; font-weight:600; font-size:.9rem; }
+  .btn:hover { box-shadow:0 0 25px rgba(99,102,241,.5); }
+  .order { max-width:560px; margin:2.5rem auto; padding:2rem; background:rgba(15,21,38,.7); border:1px solid rgba(255,255,255,.09); border-radius:18px; }
+  .order h2 { text-align:center; margin-bottom:1.2rem; color:#dbeafe; }
+  .order label { display:block; font-size:.85rem; color:#9fb0c9; margin:.8rem 0 .3rem; }
+  .order input, .order select { width:100%; padding:.7rem; border-radius:8px; border:1px solid rgba(255,255,255,.15); background:#0b1220; color:#e8ecf5; font-size:.95rem; }
+  .order button { width:100%; margin-top:1.2rem; padding:.9rem; border:0; border-radius:10px; background:linear-gradient(120deg,#0ea5e9,#6366f1); color:#fff; font-weight:700; font-size:1rem; cursor:pointer; }
+  .order button:hover { box-shadow:0 0 25px rgba(99,102,241,.5); }
+  .ok { text-align:center; color:#5eead4; margin-top:1rem; display:none; font-weight:600; }
+  .footer { text-align:center; color:#5b6b85; padding:2rem; font-size:.85rem; }
+  .footer a { color:#7dd3fc; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <span class="badge">📚 Catalogue complet — packs PDF téléchargeables</span>
+  <h1>Formations IA, niveau expert</h1>
+  <p>Des formations denses et 100 % actionnables, écrites par un praticien : LLM, agents IA, prompts, automatisation, SaaS sans code, RAG. Chaque formation = modules + exemples réels + exercices + checklist.</p>
+</div>
+
+<div class="grid" id="catalogue"></div>
+
+<div class="order" id="commander">
+  <h2>📦 Commander une formation</h2>
+  <p style="text-align:center;color:#9fb0c9;font-size:.9rem;">Après votre commande, vous recevez la confirmation par email et le paiement se fait en toute simplicité (virement ou message privé). Le PDF vous est envoyé dès réception.</p>
+  <label>Formation</label>
+  <select id="f-formation">
+    <option>🧠 Maîtrisez les LLM (GPT, Claude, Grok) — 27 €</option>
+    <option>🤖 Créez vos agents IA (n8n + Hermes) — 37 €</option>
+    <option>✍️ Prompt Engineering avancé — 19 €</option>
+    <option>⚙️ Automatisation IA (n8n &amp; Make) — 29 €</option>
+    <option>🛠️ SaaS IA sans code — 39 €</option>
+    <option>💼 Vendre des agents IA aux PME — 27 €</option>
+    <option>🗃️ Systèmes RAG et bases de données — 29 €</option>
+    <option>🎁 Pack complet (les 7) — 97 €</option>
+  </select>
+  <label>Votre nom</label>
+  <input id="f-nom" placeholder="Prénom Nom" required>
+  <label>Votre email</label>
+  <input id="f-email" type="email" placeholder="vous@email.fr" required>
+  <button onclick="commander()">Commander →</button>
+  <div class="ok" id="ok">✅ Demande envoyée ! Vous recevrez la confirmation par email très vite.</div>
+</div>
+
+<div class="footer">
+  Une question ? Contact : <a href="https://dembis91-940.github.io/agentia/">Agentia — L'IA au travail dans votre entreprise</a><br>
+  Paiement sécurisé simple — aucune carte demandée ici, confirmation humaine de votre commande.
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+const FORMATIONS = [
+  { icone:"🧠", titre:"Maîtrisez les LLM (GPT, Claude, Grok)", promesse:"Choisir le bon modèle, des prompts pro, l'API pour automatiser — 5 h/semaine gagnées.", pdf:"27 €", complet:"47 €" },
+  { icone:"🤖", titre:"Créez vos agents IA (n8n + Hermes)", promesse:"2 agents déployés en 1 semaine, sans coder. Architecture, patterns RAG, garde-fous.", pdf:"37 €", complet:"67 €" },
+  { icone:"✍️", titre:"Prompt Engineering avancé", promesse:"Frameworks, rôles, pièges d'hallucination — des prompts qui marchent du premier coup.", pdf:"19 €", complet:"35 €" },
+  { icone:"⚙️", titre:"Automatisation IA (n8n & Make)", promesse:"Workflows qui rendent 5-10 h/semaine : avis, réservations, relances, reporting.", pdf:"29 €", complet:"49 €" },
+  { icone:"🛠️", titre:"SaaS IA sans code", promesse:"Créez et lancez un SaaS avec le vibe coding — comme les 4 business déjà en ligne.", pdf:"39 €", complet:"69 €" },
+  { icone:"💼", titre:"Vendre des agents IA aux PME", promesse:"Pitch, audit gratuit, objections, tarifs — le playbook pour vendre des agents.", pdf:"27 €", complet:"47 €" },
+  { icone:"🗃️", titre:"Systèmes RAG et bases de données", promesse:"Retrieval, embeddings, vector stores — vos documents, interrogeables par l'IA.", pdf:"29 €", complet:"49 €" },
+];
+document.getElementById('catalogue').innerHTML = FORMATIONS.map(f => `
+  <div class="card">
+    <h3>${f.icone} ${f.titre}</h3>
+    <div class="promise">${f.promesse}</div>
+    <div class="price"><span class="pdf">${f.pdf}</span><span class="complet">pack complet ${f.complet}</span></div>
+    <a class="btn" href="#commander" onclick="document.getElementById('f-formation').value='${f.titre.replace(/'/g,"\\'")} — ${f.pdf}';return true;">Commander</a>
+  </div>`).join('');
+
+emailjs.init("8Pui4ZEqxW2jRVF7h");
+
+function commander(){
+  const data = {
+    site: "Formations IA",
+    name: document.getElementById('f-nom').value,
+    email: document.getElementById('f-email').value,
+    question: "Commande : " + document.getElementById('f-formation').value
+  };
+  if(!data.name || !data.email){ alert("Merci de remplir nom et email."); return; }
+  emailjs.send("service_cy1ytdb", "template_xpo58cv", data).then(()=>{
+    document.getElementById('ok').style.display='block';
+  }).catch(e=>{ alert("Erreur d'envoi : " + e.text); });
+}
+</script>
+</body>
+</html>
