@@ -10,6 +10,38 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Formations IA — Packs PDF",
+  "description": "Packs de formation IA en PDF : Maîtrisez les LLM (27 €), Créez vos agents IA (37 €), Prompt Engineering avancé (19 €), Automatisation IA (29 €), SaaS IA sans code (39 €), Vendre des agents IA aux PME (27 €), Systèmes RAG (29 €). Pack complet des 7 formations à 97 €.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Formations IA"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "19",
+      "priceCurrency": "EUR",
+      "description": "Prompt Engineering avancé — PDF"
+    },
+    {
+      "@type": "Offer",
+      "price": "27",
+      "priceCurrency": "EUR",
+      "description": "Maîtrisez les LLM — PDF"
+    },
+    {
+      "@type": "Offer",
+      "price": "97",
+      "priceCurrency": "EUR",
+      "description": "Pack complet (les 7 formations)"
+    }
+  ]
+}
+</script>
 <meta name="description" content="Formations IA en packs PDF : maîtrisez les LLM, créez vos agents IA, le prompt engineering, l'automatisation n8n et la vente d'agents IA aux PME.">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -38,19 +70,25 @@
   .ok { text-align:center; color:#5eead4; margin-top:1rem; display:none; font-weight:600; }
   .footer { text-align:center; color:#5b6b85; padding:2rem; font-size:.85rem; }
   .footer a { color:#7dd3fc; }
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;will-change:opacity,transform}
+  .reveal.visible{opacity:1;transform:none}
+  .grid .reveal:nth-child(2){transition-delay:.07s}
+  .grid .reveal:nth-child(3){transition-delay:.14s}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 <div class="hero">
   <span class="badge">📚 Catalogue complet — packs PDF téléchargeables</span>
-  <h1>Formations IA, niveau expert</h1>
+  <h1 class="reveal">Formations IA, niveau expert</h1>
   <p>Des formations denses et 100 % actionnables, écrites par un praticien : LLM, agents IA, prompts, automatisation, SaaS sans code, RAG. Chaque formation = modules + exemples réels + exercices + checklist.</p>
 </div>
 
 <div class="grid" id="catalogue"></div>
 
 <div class="order" id="commander">
-  <h2>📦 Commander une formation</h2>
+  <h2 class="reveal">📦 Commander une formation</h2>
   <p style="text-align:center;color:#9fb0c9;font-size:.9rem;">Après votre commande, vous recevez la confirmation par email et le paiement se fait en toute simplicité (virement ou message privé). Le PDF vous est envoyé dès réception.</p>
   <label>Formation</label>
   <select id="f-formation">
@@ -88,7 +126,7 @@ const FORMATIONS = [
   { icone:"🗃️", titre:"Systèmes RAG et bases de données", promesse:"Retrieval, embeddings, vector stores — vos documents, interrogeables par l'IA.", pdf:"29 €", complet:"49 €" },
 ];
 document.getElementById('catalogue').innerHTML = FORMATIONS.map(f => `
-  <div class="card">
+  <div class="card reveal">
     <h3>${f.icone} ${f.titre}</h3>
     <div class="promise">${f.promesse}</div>
     <div class="price"><span class="pdf">${f.pdf}</span><span class="complet">pack complet ${f.complet}</span></div>
@@ -109,6 +147,10 @@ function commander(){
     document.getElementById('ok').style.display='block';
   }).catch(e=>{ alert("Erreur d'envoi : " + e.text); });
 }
+</script>
+
+<script>
+(function(){function r(){var e=document.querySelectorAll('.reveal');if(!e.length)return;if(!('IntersectionObserver'in window)){for(var i=0;i<e.length;i++)e[i].classList.add('visible');return;}var io=new IntersectionObserver(function(en){for(var j=0;j<en.length;j++){if(en[j].isIntersecting){en[j].target.classList.add('visible');io.unobserve(en[j].target);}}},{threshold:.12,rootMargin:'0px 0px -40px 0px'});for(var k=0;k<e.length;k++)io.observe(e[k]);}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',r);}else{r();}})();
 </script>
 </body>
 </html>
