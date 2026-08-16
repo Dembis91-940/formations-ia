@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de niveau IA — Formations IA</title>
+<meta name="description" content="8 questions, 2 minutes : découvrez votre niveau IA réel (débutant, opérationnel, avancé) et la formation qui vous fait progresser le plus vite. Outil réel, 100 % local.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%8E%93%3C%2Ftext%3E%3C%2Fsvg%3E">
+<style>
+:root{
+  --bg:#070b14; --bg-2:#0b1220; --bg-3:#0e1628; --card:#0f1526;
+  --text:#e8ecf5; --text-2:#dbeafe; --muted:#9fb0c9; --muted-2:#7c8aa5;
+  --sky:#0ea5e9; --sky-bright:#38bdf8; --indigo:#6366f1; --indigo-2:#818cf8; --teal:#5eead4;
+  --grad:linear-gradient(120deg,#38bdf8 0%,#818cf8 60%,#a78bfa 100%);
+  --grad-cta:linear-gradient(120deg,#0ea5e9 0%,#6366f1 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(800px 400px at 80% -10%,rgba(56,189,248,.14),transparent 60%),radial-gradient(600px 300px at 10% 110%,rgba(129,140,248,.12),transparent 60%)}
+.wrap{max-width:720px;margin:0 auto;padding:40px 20px 60px}
+header{text-align:center;margin-bottom:26px}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#7dd3fc}
+h1{font-size:clamp(28px,5.5vw,42px);font-weight:800;line-height:1.12;margin:10px 0 8px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);font-size:15px;max-width:560px;margin:0 auto}
+.prog{height:6px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin:0 0 18px}
+.prog>div{height:100%;border-radius:99px;background:var(--grad-cta);transition:width .3s}
+#q{padding:24px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(15,21,38,.75)}
+.qnum{font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.qtext{font-size:17px;font-weight:600;margin-bottom:16px;line-height:1.4}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{padding:13px 15px;border:1px solid rgba(255,255,255,.14);border-radius:12px;cursor:pointer;font-size:14.5px;transition:.15s;background:transparent;color:var(--text);text-align:left;font-family:inherit}
+.opt:hover{border-color:var(--sky);background:rgba(56,189,248,.1)}
+.opt:active,.opt.sel{border-color:var(--indigo);background:rgba(99,102,241,.15)}
+#res{display:none;margin-top:20px;padding:24px;border-radius:18px;border:1px solid rgba(129,140,248,.35);background:rgba(15,21,38,.8)}
+.score{font-size:52px;font-weight:800;text-align:center;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+.verdict{text-align:center;font-size:19px;font-weight:800;margin:6px 0 14px}
+.rec{margin:14px 0;padding:14px;border-radius:12px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);font-size:14.5px;line-height:1.55}
+.rec b{color:#7dd3fc}
+.back{margin-top:16px;text-align:center}
+.back a{color:#7dd3fc;cursor:pointer;font-size:14px;font-weight:600;text-decoration:none}
+.back a:hover{text-decoration:underline}
+footer{margin-top:30px;text-align:center;color:var(--muted-2);font-size:12px}
+.btn{display:inline-block;margin-top:16px;padding:.75rem 1.4rem;border-radius:10px;background:var(--grad-cta);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;text-align:center}
+.btn:hover{box-shadow:0 0 25px rgba(99,102,241,.5)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Formations IA · Test de niveau</div>
+  <h1>Quel est votre niveau IA réel ?</h1>
+  <p class="sub">8 questions, 2 minutes. Vous obtenez votre profil (Débutant / Opérationnel / Avancé) et la formation qui vous fera progresser le plus vite. Rien n'est envoyé.</p>
+</header>
+<div class="prog"><div id="bar" style="width:0%"></div></div>
+<div id="q"></div>
+<div id="res"></div>
+<footer>Outil réel, 100 % local — aucune donnée envoyée. Fait partie du catalogue Formations IA.</footer>
+</div>
+<script>
+var Q=[
+["Usage quotidien","Utilisez-vous déjà une IA générative (ChatGPT, Claude, Copilot…) ?",[["Tous les jours, pour travailler","2"],["De temps en temps, pour tester","1"],["Jamais ou presque","0"]]],
+["Confiance","Savez-vous écrire un prompt qui donne un résultat exploitable du premier coup ?",[["Oui, j'ai des modèles qui marchent","2"],["Ça marche parfois, je bricole","1"],["Je ne sais pas par où commencer","0"]]],
+["Automatisation","Vos tâches répétitives (emails, devis, relances, saisie) sont-elles déjà automatisées ?",[["Oui, plusieurs workflows tournent","2"],["J'ai commencé une ou deux automatisations","1"],["Tout est encore manuel","0"]]],
+["Agents","Avez-vous déjà construit ou utilisé un agent IA (chatbot, assistant qui agit) ?",[["Oui, en production ou en test sérieux","2"],["J'ai suivi un tutoriel","1"],["Je ne sais pas ce que c'est","0"]]],
+["Technique","Comment vous situez-vous côté technique (code, API, outils) ?",[["Je code ou j'utilise des API","2"],["Je suis à l'aise avec les outils no-code","1"],["Je suis totalement non technique","0"]]],
+["Business","Avez-vous déjà vendu ou monétisé une compétence IA ?",[["Oui : clients, produits, missions","2"],["Je cherche comment faire","1"],["Aucune idée de la monétisation","0"]]],
+["RAG & données","Savez-vous relier l'IA à VOS documents (base de connaissances, fichiers) ?",[["Oui, je l'ai fait","2"],["J'en ai entendu parler","1"],["Non, jamais","0"]]],
+["Stratégie","Quel est votre objectif principal ?",[["Gagner du temps sur mes opérations","S"],["Créer un produit / SaaS / revenu","P"],["Comprendre et monter en compétence","C"]]],
+];
+var i=0,score=0,strat="";
+function render(){
+  var q=Q[i];
+  document.getElementById("bar").style.width=((i)/(Q.length)*100)+"%";
+  var html='<div class="qnum">QUESTION '+(i+1)+' / '+Q.length+'</div><div class="qtext">'+q[1]+'</div><div class="opts">';
+  q[2].forEach(function(o,idx){ html+='<button class="opt" onclick="pick('+idx+')">'+o[0]+'</button>'; });
+  html+='</div>';
+  document.getElementById("q").innerHTML=html;
+}
+function pick(idx){
+  var q=Q[i],o=q[2][idx];
+  if(o[1]==="S"||o[1]==="P"||o[1]==="C"){ strat=o[1]; } else { score+=parseInt(o[1],10); }
+  i++;
+  if(i<Q.length){ render(); } else { result(); }
+}
+function result(){
+  document.getElementById("q").innerHTML="";
+  document.getElementById("bar").style.width="100%";
+  var max=7*2,pct=Math.round(score/max*100);
+  var niveau = pct>=70?"Avancé":pct>=40?"Opérationnel":"Débutant";
+  var verdict = niveau==="Avancé"?"🚀 Niveau avancé — vous savez faire, maintenant il faut systématiser.":niveau==="Opérationnel"?"⚡ Niveau opérationnel — vous touchez du doigt, il manque la méthode.":"🌱 Niveau débutant — tout est à construire, et c'est une excellente nouvelle.";
+  var rec="";
+  if(niveau==="Débutant"){
+    rec = strat==="S" ? "Commencez par <b>Prompt Engineering avancé (19 €)</b> pour produire du premier coup, puis <b>Automatisation IA (29 €)</b> pour rendre vos premières heures." :
+          strat==="P" ? "Commencez par <b>Prompt Engineering avancé (19 €)</b>, puis <b>SaaS IA sans code (39 €)</b> pour transformer la compétence en produit." :
+          "Commencez par <b>Maîtrisez les LLM (27 €)</b> : le socle complet pour comprendre, choisir et utiliser les bons modèles.";
+  } else if(niveau==="Opérationnel"){
+    rec = strat==="S" ? "<b>Automatisation IA (29 €)</b> ou <b>Créez vos agents IA (37 €)</b> : passez des cas isolés aux workflows qui tournent seuls." :
+          strat==="P" ? "<b>Créez vos agents IA (37 €)</b> puis <b>SaaS IA sans code (39 €)</b> : c'est le duo qui transforme une compétence en revenus." :
+          "<b>Créez vos agents IA (37 €)</b> : l'architecture, les patterns RAG et les garde-fous qui manquent au bricolage.";
+  } else {
+    rec = strat==="S" ? "<b>Automatisation IA (29 €)</b> + <b>Systèmes RAG (29 €)</b> : industrialisez et branchez vos documents sur vos workflows." :
+          strat==="P" ? "<b>Vendre des agents IA aux PME (27 €)</b> ou <b>SaaS IA sans code (39 €)</b> : la monétisation, pas la technique." :
+          "<b>Systèmes RAG et bases de données (29 €)</b> : retrieval, embeddings, vector stores — le niveau au-dessus.";
+  }
+  var all = niveau!=="Débutant" ? "<br><br>💡 Le <b>Pack complet des 7 formations (97 €)</b> reste le meilleur rapport : tout le parcours pour le prix de deux packs." : "";
+  document.getElementById("res").style.display="block";
+  document.getElementById("res").innerHTML='<div class="score">'+pct+'/100</div><div class="verdict">'+verdict+'</div><div class="rec">🎯 <b>Votre formation :</b> '+rec+all+'</div><div class="back" onclick="location.reload()">↻ Recommencer le test</div><div style="text-align:center"><a class="btn" href="index.html">Voir toutes les formations →</a></div>';
+}
+render();
+</script>
+</body>
+</html>
