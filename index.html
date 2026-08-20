@@ -200,6 +200,8 @@ a{transition:color .3s ease}
 .btn:hover{box-shadow:0 10px 36px rgba(99,102,241,.4);transform:translateY(-3px)}
 
 .badge{text-transform:uppercase;letter-spacing:.16em;font-weight:700}
+/* Correctif AA : .promise — le fond glass (rgba .6) écrasait le dégradé bgclip:text → restauration */
+.promise{background:linear-gradient(90deg,#6366F1,#38BDF8,#2DD4BF) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;animation:f3shimmer 7s linear infinite}
 
 .f3-reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
 .f3-reveal.f3-in{opacity:1;transform:translateY(0)}
