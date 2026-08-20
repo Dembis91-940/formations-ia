@@ -53,13 +53,13 @@
     --text-2:#dbeafe;
     --muted:#9fb0c9;
     --muted-2:#7c8aa5;
-    --sky:#0ea5e9;
+    --sky:#38bdf8;
     --sky-bright:#38bdf8;
-    --indigo:#6366f1;
-    --indigo-2:#818cf8;
-    --teal:#5eead4;
-    --grad:linear-gradient(120deg,#38bdf8 0%,#818cf8 60%,#a78bfa 100%);
-    --grad-cta:linear-gradient(120deg,#0ea5e9 0%,#6366f1 100%);
+    --indigo:#a78bfa;
+    --indigo-2:#a78bfa;
+    --teal:#a78bfa;
+    --grad:linear-gradient(120deg,#38bdf8 0%,#a78bfa 60%,#a78bfa 100%);
+    --grad-cta:linear-gradient(120deg,#38bdf8 0%,#a78bfa 100%);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); }
@@ -82,7 +82,7 @@
   .card .promise { color:var(--muted); font-size:.9rem; flex:1; }
   .price { margin-top:1rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
   .price .pdf { font-size:1.25rem; font-weight:700; color:#7dd3fc; }
-  .price .complet { font-size:.85rem; color:#8b98b0; text-decoration:line-through; }
+  .price .complet { font-size:.85rem; color:#9fb0c9; text-decoration:line-through; }
   .price .promo { font-size:.85rem; color:var(--teal); }
   .btn { display:inline-block; margin-top:.9rem; text-align:center; padding:.7rem 1.2rem; border-radius:10px; background:var(--grad-cta); color:#fff; text-decoration:none; font-weight:600; font-size:.9rem; }
   .btn:hover { box-shadow:0 0 25px rgba(99,102,241,.5); }
@@ -101,12 +101,117 @@
   .grid .reveal:nth-child(2){transition-delay:.07s}
   .grid .reveal:nth-child(3){transition-delay:.14s}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+}
 </style>
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style id="futur-v3">
+/* ============================================================
+   FUTUR V3 — NÉBULEUSE ACADÉMIE — formations-ia
+   2026-08-20
+   Overlay design : palette futuriste, glassmorphism, animations.
+   La structure HTML, les outils, EmailJS, chatbots et prix sont
+   intégralement préservés (ce bloc ne fait que styler).
+   ============================================================ */
+:root{
+  --bg: #050A1E;
+  --bg-2: #0A1028;
+  --bg-3: #0E1630;
+  --text: #EAF2FF;
+  --text-2: #A9B8D8;
+  --muted: #7C8AA5;
+  --muted-2: #5E6C8C;
+  --card: rgba(255,255,255,.045);
+  --indigo: #6366F1;
+  --indigo-2: #818CF8;
+  --sky: #38BDF8;
+  --sky-bright: #7DD3FC;
+  --teal: #2DD4BF;
+  --grad: linear-gradient(135deg,#6366F1,#38BDF8);
+  --grad-cta: linear-gradient(135deg,#38BDF8,#2DD4BF);
+}
+html{scroll-behavior:smooth}
+body{
+  background-color:#050A1E !important;
+  background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px) !important;
+  background-size:34px 34px !important;
+  color:#EAF2FF !important;
+  font-family:'Inter',sans-serif !important;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family:'Urbanist',sans-serif !important;
+  letter-spacing:-.015em;
+  color:#EAF2FF !important;
+}
+p,li,td,label{color:#A9B8D8}
+a{transition:color .3s ease}
+::selection{background:#6366F140;color:#EAF2FF}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#050A1E}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#6366F1,#2DD4BF);border-radius:8px;border:2px solid #050A1E}
+
+@keyframes f3float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(4vmax,-3vmax) scale(1.07)}66%{transform:translate(-3vmax,3vmax) scale(.96)}}
+@keyframes f3shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes f3pulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.4)}50%{box-shadow:0 0 0 14px transparent}}
+@keyframes f3gradmove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes f3floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.badge,.promise{
+  background:linear-gradient(90deg,#6366F1,#38BDF8,#2DD4BF);
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent !important;
+  animation:f3shimmer 7s linear infinite;
+}
+.card,.arg,.pdf,.promise,.grid,.hero{
+  background:rgba(12,20,46,.6) !important;
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border:1px solid rgba(140,170,255,.15) !important;
+  border-radius:18px;
+  box-shadow:0 8px 32px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
+  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.card,.arg,.pdf,.promise,.grid,.hero:hover{
+  transform:translateY(-4px);
+  border-color:#6366F166 !important;
+  box-shadow:0 12px 42px rgba(99,102,241,.4);
+}
+.nav,nav,header{
+  background:rgba(12,20,46,.6) !important;
+  backdrop-filter:blur(18px) saturate(150%);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+  border-bottom:1px solid rgba(140,170,255,.15);
+}
+.hero{
+  background:
+    radial-gradient(900px 420px at 12% -10%, rgba(99,102,241,.20), transparent 60%), radial-gradient(760px 460px at 88% 12%, rgba(56,189,248,.14), transparent 62%), linear-gradient(165deg,#0A112E 0%,#050A1E 60%,#071028 100%) !important;
+}
+.btn{letter-spacing:.02em;font-weight:600;transition:all .3s ease;border-radius:12px}
+.btn:hover{transform:translateY(-2px)}
+.btn{
+  background:linear-gradient(135deg,#6366F1,#38BDF8,#2DD4BF) !important;
+  background-size:200% 200%;
+  animation:f3gradmove 6s ease infinite;
+  box-shadow:0 6px 24px rgba(99,102,241,.4);
+  border:none !important;
+  color:#FFFFFF !important;
+}
+.btn:hover{box-shadow:0 10px 36px rgba(99,102,241,.4);transform:translateY(-3px)}
+
+.badge{text-transform:uppercase;letter-spacing:.16em;font-weight:700}
+
+.f3-reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.f3-reveal.f3-in{opacity:1;transform:translateY(0)}
+#f3-progress{position:fixed;top:0;left:0;height:3px;z-index:9999;background:linear-gradient(90deg,#6366F1,#38BDF8,#2DD4BF);width:0;box-shadow:0 0 12px rgba(99,102,241,.4);border-radius:0 3px 3px 0}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style></head>
 <body>
 <div class="hero">
   <span class="badge">📚 Catalogue complet — packs PDF téléchargeables</span>
-  <h1 class="reveal">De zéro à expert IA : <span style="background:linear-gradient(120deg,#5eead4,#38bdf8,#818cf8);-webkit-background-clip:text;background-clip:text;color:transparent">7 formations qui rendent</span></h1>
+  <h1 class="reveal">De zéro à expert IA : <span style="background:linear-gradient(120deg,#a78bfa,#38bdf8,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent">7 formations qui rendent</span></h1>
   <p>Des formations denses et 100 % actionnables, écrites par un praticien : LLM, agents IA, prompts, automatisation, SaaS sans code, RAG. Chaque formation = modules + exemples réels + exercices + checklist.</p>
   <p style="margin-top:1.2rem"><a class="btn" href="outil.html" style="margin-top:0">🎯 Tester mon niveau IA gratuitement (2 min) →</a></p>
 </div>
@@ -186,5 +291,26 @@ function commander(){
 </script>
 <script src="chatbot-config.js"></script>
 <script src="chatbot.js"></script>
-</body>
+<script id="f3-script">
+(function(){
+  if(document.getElementById('f3-progress'))return;
+  var p=document.createElement('div');p.id='f3-progress';document.body.appendChild(p);
+  var o=document.createElement('div');
+  o.style.cssText='position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden';
+  var orbs=["rgba(99,102,241,.22)","rgba(56,189,248,.18)","rgba(45,212,191,.14)"];
+  var pos=[['-15vmax','-15vmax','55vmax','55vmax','18s','normal'],['-12vmax','30%','45vmax','45vmax','24s','reverse'],['30%','-18vmax','40vmax','40vmax','21s','normal']];
+  for(var i=0;i<3;i++){var d=document.createElement('div');d.style.cssText='position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:f3float '+pos[i][4]+' ease-in-out infinite '+pos[i][5];
+    d.style.left=pos[i][0];d.style.top=pos[i][1];d.style.width=pos[i][2];d.style.height=pos[i][3];
+    d.style.background='radial-gradient(circle,'+orbs[i]+',transparent 60%)';o.appendChild(d);}
+  document.body.appendChild(o);
+  addEventListener('scroll',function(){var h=document.documentElement;var sc=(h.scrollTop||document.body.scrollTop);var m=h.scrollHeight-h.clientHeight;p.style.width=(m>0?(sc/m*100):0)+'%';},{passive:true});
+  var sel=null;
+  if(!sel)return;
+  var els=document.querySelectorAll(sel);
+  if(!('IntersectionObserver' in window)){for(var i=0;i<els.length;i++)els[i].classList.add('f3-in');return;}
+  for(var i=0;i<els.length;i++)els[i].classList.add('f3-reveal');
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('f3-in');io.unobserve(en.target);}});},{threshold:.1});
+  for(var i=0;i<els.length;i++)io.observe(els[i]);
+})();
+</script></body>
 </html>

@@ -10,9 +10,9 @@
 :root{
   --bg:#070b14; --bg-2:#0b1220; --bg-3:#0e1628; --card:#0f1526;
   --text:#e8ecf5; --text-2:#dbeafe; --muted:#9fb0c9; --muted-2:#7c8aa5;
-  --sky:#0ea5e9; --sky-bright:#38bdf8; --indigo:#6366f1; --indigo-2:#818cf8; --teal:#5eead4;
-  --grad:linear-gradient(120deg,#38bdf8 0%,#818cf8 60%,#a78bfa 100%);
-  --grad-cta:linear-gradient(120deg,#0ea5e9 0%,#6366f1 100%);
+  --sky:#38bdf8; --sky-bright:#38bdf8; --indigo:#a78bfa; --indigo-2:#a78bfa; --teal:#a78bfa;
+  --grad:linear-gradient(120deg,#38bdf8 0%,#a78bfa 60%,#a78bfa 100%);
+  --grad-cta:linear-gradient(120deg,#38bdf8 0%,#a78bfa 100%);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
@@ -42,6 +42,8 @@ h1{font-size:clamp(28px,5.5vw,42px);font-weight:800;line-height:1.12;margin:10px
 footer{margin-top:30px;text-align:center;color:var(--muted-2);font-size:12px}
 .btn{display:inline-block;margin-top:16px;padding:.75rem 1.4rem;border-radius:10px;background:var(--grad-cta);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;text-align:center}
 .btn:hover{box-shadow:0 0 25px rgba(99,102,241,.5)}
+
+}
 </style>
 </head>
 <body>
