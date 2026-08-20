@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formations IA — Packs PDF (Maîtrisez les LLM, Agents IA, Prompt Engineering...)</title>
+<title>Formations IA — Packs PDF : LLM, Agents IA, Prompt Engineering</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ctext%20y%3D%27.9em%27%20font-size%3D%2790%27%3E%F0%9F%8E%93%3C%2Ftext%3E%3C%2Fsvg%3E">
-<meta property="og:title" content="Formations IA — Packs PDF (Maîtrisez les LLM, Agents IA, Prompt Engineering...)">
+<meta property="og:title" content="Formations IA — Packs PDF : LLM, Agents IA, Prompt Engineering">
 <meta property="og:description" content="Formations IA en packs PDF : maîtrisez les LLM, créez vos agents IA, le prompt engineering, l'automatisation n8n et la vente d'agents IA aux PME.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -304,12 +304,12 @@ function commander(){
     d.style.background='radial-gradient(circle,'+orbs[i]+',transparent 60%)';o.appendChild(d);}
   document.body.appendChild(o);
   addEventListener('scroll',function(){var h=document.documentElement;var sc=(h.scrollTop||document.body.scrollTop);var m=h.scrollHeight-h.clientHeight;p.style.width=(m>0?(sc/m*100):0)+'%';},{passive:true});
-  var sel=null;
+  var sel=".hero,.arg-grid,.grid,.order";
   if(!sel)return;
   var els=document.querySelectorAll(sel);
   if(!('IntersectionObserver' in window)){for(var i=0;i<els.length;i++)els[i].classList.add('f3-in');return;}
   for(var i=0;i<els.length;i++)els[i].classList.add('f3-reveal');
-  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('f3-in');io.unobserve(en.target);}});},{threshold:.1});
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting||en.target.getBoundingClientRect().top<innerHeight){en.target.classList.add('f3-in');io.unobserve(en.target);}});},{threshold:.1});
   for(var i=0;i<els.length;i++)io.observe(els[i]);
 })();
 </script></body>
