@@ -97,7 +97,7 @@ function result(){
   if(niveau==="Débutant"){
     rec = strat==="S" ? "Commencez par <b>Prompt Engineering avancé (19 €)</b> pour produire du premier coup, puis <b>Automatisation IA (29 €)</b> pour rendre vos premières heures." :
           strat==="P" ? "Commencez par <b>Prompt Engineering avancé (19 €)</b>, puis <b>SaaS IA sans code (39 €)</b> pour transformer la compétence en produit." :
-          "Commencez par <b>Maîtrisez les LLM (27 €)</b> : le socle complet pour comprendre, choisir et utiliser les bons modèles.";
+          "Commencez par <b>Maîtrisez les LLM (19 €)</b> : le socle complet pour comprendre, choisir et utiliser les bons modèles.";
   } else if(niveau==="Opérationnel"){
     rec = strat==="S" ? "<b>Automatisation IA (29 €)</b> ou <b>Créez vos agents IA (37 €)</b> : passez des cas isolés aux workflows qui tournent seuls." :
           strat==="P" ? "<b>Créez vos agents IA (37 €)</b> puis <b>SaaS IA sans code (39 €)</b> : c'est le duo qui transforme une compétence en revenus." :
@@ -107,7 +107,7 @@ function result(){
           strat==="P" ? "<b>Vendre des agents IA aux PME (27 €)</b> ou <b>SaaS IA sans code (39 €)</b> : la monétisation, pas la technique." :
           "<b>Systèmes RAG et bases de données (29 €)</b> : retrieval, embeddings, vector stores — le niveau au-dessus.";
   }
-  var all = niveau!=="Débutant" ? "<br><br>💡 Le <b>Pack complet des 7 formations (97 €)</b> reste le meilleur rapport : tout le parcours pour le prix de deux packs." : "";
+  var all = niveau!=="Débutant" ? "<br><br>💡 Le <b>Pack Complet des 7 formations (97 €)</b> reste le meilleur rapport : tout le parcours pour le prix de deux packs. Besoin d'un coup d'accélérateur ? Le <b>Pack Direction (147 €)</b> ajoute une session individuelle de 45 min avec le formateur." : "";
   document.getElementById("res").style.display="block";
   document.getElementById("res").innerHTML='<div class="score">'+pct+'/100</div><div class="verdict">'+verdict+'</div><div class="rec">🎯 <b>Votre formation :</b> '+rec+all+'</div><div class="back" onclick="location.reload()">↻ Recommencer le test</div><div style="text-align:center"><a class="btn" href="index.html">Voir toutes les formations →</a></div>';
 }

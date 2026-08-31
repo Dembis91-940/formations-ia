@@ -15,7 +15,7 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Formations IA — Packs PDF",
-  "description": "Packs de formation IA en PDF : Maîtrisez les LLM (27 €), Créez vos agents IA (37 €), Prompt Engineering avancé (19 €), Automatisation IA (29 €), SaaS IA sans code (39 €), Vendre des agents IA aux PME (27 €), Systèmes RAG (29 €). Pack complet des 7 formations à 97 €.",
+  "description": "Packs de formation IA en PDF : Maîtrisez les LLM (19 €), Créez vos agents IA (37 €), Prompt Engineering avancé (19 €), Automatisation IA (29 €), SaaS IA sans code (39 €), Vendre des agents IA aux PME (27 €), Systèmes RAG (29 €). Pack Complet des 7 formations à 97 €, Pack Direction à 147 € avec session 45 min.",
   "brand": {
     "@type": "Brand",
     "name": "Formations IA"
@@ -25,24 +25,93 @@
       "@type": "Offer",
       "price": "19",
       "priceCurrency": "EUR",
+      "description": "Maîtrisez les LLM — PDF"
+    },
+    {
+      "@type": "Offer",
+      "price": "37",
+      "priceCurrency": "EUR",
+      "description": "Créez vos agents IA (n8n + Hermes) — PDF"
+    },
+    {
+      "@type": "Offer",
+      "price": "19",
+      "priceCurrency": "EUR",
       "description": "Prompt Engineering avancé — PDF"
+    },
+    {
+      "@type": "Offer",
+      "price": "29",
+      "priceCurrency": "EUR",
+      "description": "Automatisation IA (n8n & Make) — PDF"
+    },
+    {
+      "@type": "Offer",
+      "price": "39",
+      "priceCurrency": "EUR",
+      "description": "SaaS IA sans code — PDF"
     },
     {
       "@type": "Offer",
       "price": "27",
       "priceCurrency": "EUR",
-      "description": "Maîtrisez les LLM — PDF"
+      "description": "Vendre des agents IA aux PME — PDF"
+    },
+    {
+      "@type": "Offer",
+      "price": "29",
+      "priceCurrency": "EUR",
+      "description": "Systèmes RAG et bases de données — PDF"
     },
     {
       "@type": "Offer",
       "price": "97",
       "priceCurrency": "EUR",
-      "description": "Pack complet (les 7 formations)"
+      "description": "Pack Complet (les 7 formations)"
+    },
+    {
+      "@type": "Offer",
+      "price": "147",
+      "priceCurrency": "EUR",
+      "description": "Pack Direction (les 7 formations + session 45 min)"
     }
   ]
 }
 </script>
-<meta name="description" content="Formations IA en packs PDF : maîtrisez les LLM, créez vos agents IA, le prompt engineering, l'automatisation n8n et la vente d'agents IA aux PME.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Comment vais-je recevoir ma formation ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Dès que votre commande est confirmée, vous recevez la confirmation par email, puis le PDF de la formation sous 24-48 h. Livraison simple et rapide."}
+    },
+    {
+      "@type": "Question",
+      "name": "Quels sont les prix et les formules ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Solo : 1 formation PDF au choix de 19 à 39 €. Pack Complet : les 7 formations pour 97 € (au lieu de 199 €). Pack Direction : les 7 + une session individuelle de 45 min avec le formateur pour 147 €."}
+    },
+    {
+      "@type": "Question",
+      "name": "Y a-t-il une garantie ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Oui : 14 jours satisfait ou remboursé, sans condition. Si la formation ne vous apporte rien, écrivez-nous sous 14 jours pour un remboursement intégral."}
+    },
+    {
+      "@type": "Question",
+      "name": "Comment savoir par où commencer ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Faites le test de niveau gratuit (8 questions, 2 min) : il vous donne votre profil et la formation qui vous fait progresser le plus vite."}
+    },
+    {
+      "@type": "Question",
+      "name": "Le Pack Direction, c'est pour qui ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Pour celles et ceux qui veulent aller plus vite : les 7 formations + une session individuelle de 45 min avec le formateur pour débloquer votre projet précis (agent IA, automatisation, lancement SaaS) avec un plan d'action sur mesure."}
+    }
+  ]
+}
+</script>
+<meta name="description" content="Formations IA en packs PDF : maîtrisez les LLM, créez vos agents IA, le prompt engineering, l'automatisation n8n et la vente d'agents IA aux PME. Test de niveau gratuit, packs à partir de 19 €.">
 <style>
   :root{
     --bg:#070b14;
@@ -226,19 +295,66 @@ a{transition:color .3s ease}
 
 <div class="grid" id="catalogue"></div>
 
+<div class="packs" id="packs" style="max-width:1150px;margin:0 auto;padding:1rem 6vw 0.2rem;">
+  <h2 style="text-align:center;font-size:clamp(1.5rem,3.4vw,2.1rem);margin-bottom:0.4rem;font-family:'Urbanist',sans-serif;">3 formules, un seul objectif : votre montée en compétence</h2>
+  <p style="text-align:center;color:var(--muted);font-size:.95rem;max-width:640px;margin:0 auto 1.8rem;">Solo pour découvrir, Pack Complet pour tout maîtriser, Pack Direction pour être accompagné jusqu'au déploiement.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;">
+    <div class="pack-card" style="background:rgba(12,20,46,.6);backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(140,170,255,.15);border-radius:18px;padding:1.8rem 1.5rem;display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.35);">
+      <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#7dd3fc;margin-bottom:.5rem;">Solo</div>
+      <div style="font-size:1.05rem;font-weight:700;color:var(--text-2);margin-bottom:.4rem;">1 formation PDF au choix</div>
+      <div style="font-size:2rem;font-weight:800;background:linear-gradient(135deg,#6366F1,#38BDF8);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.6rem;">19 à 39 €</div>
+      <ul style="list-style:none;padding:0;margin:0 0 1.2rem;flex:1;font-size:.88rem;color:#A9B8D8;line-height:1.9;">
+        <li>✓ Modules + exemples réels + exercices</li>
+        <li>✓ Checklist de fin de formation</li>
+        <li>✓ PDF livré par email sous 24-48 h</li>
+      </ul>
+      <a class="btn" href="#commander" onclick="document.getElementById('f-formation').value='🧠 Maîtrisez les LLM (GPT, Claude, Grok) — 19 €';return true;" style="text-align:center;">Choisir ma formation</a>
+    </div>
+    <div class="pack-card" style="background:linear-gradient(160deg,rgba(99,102,241,.16),rgba(56,189,248,.08)),rgba(12,20,46,.7);backdrop-filter:blur(16px) saturate(140%);border:1.5px solid rgba(129,140,248,.55);border-radius:18px;padding:1.8rem 1.5rem;display:flex;flex-direction:column;box-shadow:0 12px 42px rgba(99,102,241,.35);transform:translateY(-6px);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;">
+        <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#7dd3fc;">Pack Complet</div>
+        <span style="font-size:.72rem;font-weight:700;letter-spacing:.08em;background:linear-gradient(135deg,#38BDF8,#2DD4BF);color:#050A1E;border-radius:999px;padding:.25rem .7rem;">RECOMMANDÉ</span>
+      </div>
+      <div style="font-size:1.05rem;font-weight:700;color:var(--text-2);margin-bottom:.4rem;">Les 7 formations</div>
+      <div style="font-size:2rem;font-weight:800;background:linear-gradient(135deg,#38BDF8,#2DD4BF);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.6rem;">97 € <span style="font-size:1rem;color:#7C8AA5;text-decoration:line-through;background:none;-webkit-background-clip:initial;background-clip:initial;">199 €</span></div>
+      <ul style="list-style:none;padding:0;margin:0 0 1.2rem;flex:1;font-size:.88rem;color:#A9B8D8;line-height:1.9;">
+        <li>✓ Les 7 formations du parcours complet</li>
+        <li>✓ Plus de 150 pages de pratique</li>
+        <li>✓ Le meilleur rapport qualité-prix</li>
+      </ul>
+      <a class="btn" href="#commander" onclick="document.getElementById('f-formation').value='🎁 Pack Complet (les 7 formations) — 97 €';return true;" style="text-align:center;">Commander le Pack Complet</a>
+    </div>
+    <div class="pack-card" style="background:rgba(12,20,46,.6);backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(45,212,191,.4);border-radius:18px;padding:1.8rem 1.5rem;display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.35);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;">
+        <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#2DD4BF;">Pack Direction</div>
+        <span style="font-size:.72rem;font-weight:700;letter-spacing:.08em;background:rgba(45,212,191,.15);color:#2DD4BF;border:1px solid rgba(45,212,191,.4);border-radius:999px;padding:.25rem .7rem;">NOUVEAU</span>
+      </div>
+      <div style="font-size:1.05rem;font-weight:700;color:var(--text-2);margin-bottom:.4rem;">Les 7 formations + session 45 min</div>
+      <div style="font-size:2rem;font-weight:800;background:linear-gradient(135deg,#2DD4BF,#38BDF8);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.6rem;">147 €</div>
+      <ul style="list-style:none;padding:0;margin:0 0 1.2rem;flex:1;font-size:.88rem;color:#A9B8D8;line-height:1.9;">
+        <li>✓ Les 7 formations du parcours complet</li>
+        <li>✓ 1 session individuelle de 45 min avec le formateur</li>
+        <li>✓ Votre projet débloqué en direct</li>
+      </ul>
+      <a class="btn" href="#commander" onclick="document.getElementById('f-formation').value='🚀 Pack Direction (les 7 + session 45 min) — 147 €';return true;" style="text-align:center;">Commander le Pack Direction</a>
+    </div>
+  </div>
+</div>
+
 <div class="order" id="commander">
   <h2 class="reveal">📦 Commander une formation</h2>
   <p style="text-align:center;color:#9fb0c9;font-size:.9rem;">Après votre commande, vous recevez la confirmation par email et le paiement se fait en toute simplicité (virement ou message privé). Le PDF vous est envoyé dès réception.</p>
   <label>Formation</label>
   <select id="f-formation">
-    <option>🧠 Maîtrisez les LLM (GPT, Claude, Grok) — 27 €</option>
+    <option>🧠 Maîtrisez les LLM (GPT, Claude, Grok) — 19 €</option>
     <option>🤖 Créez vos agents IA (n8n + Hermes) — 37 €</option>
     <option>✍️ Prompt Engineering avancé — 19 €</option>
     <option>⚙️ Automatisation IA (n8n &amp; Make) — 29 €</option>
     <option>🛠️ SaaS IA sans code — 39 €</option>
     <option>💼 Vendre des agents IA aux PME — 27 €</option>
     <option>🗃️ Systèmes RAG et bases de données — 29 €</option>
-    <option>🎁 Pack complet (les 7) — 97 €</option>
+    <option>🎁 Pack Complet (les 7 formations) — 97 €</option>
+    <option>🚀 Pack Direction (les 7 + session 45 min) — 147 €</option>
   </select>
   <label>Votre nom</label>
   <input id="f-nom" placeholder="Prénom Nom" required>
@@ -248,6 +364,34 @@ a{transition:color .3s ease}
   <div class="ok" id="ok">✅ Demande envoyée ! Vous recevrez la confirmation par email très vite.</div>
 </div>
 
+<div class="faq" id="faq" style="max-width:860px;margin:0 auto;padding:2.5rem 6vw;">
+  <h2 style="text-align:center;font-size:clamp(1.5rem,3.4vw,2.1rem);margin-bottom:.4rem;font-family:'Urbanist',sans-serif;">Vos questions, nos réponses</h2>
+  <p style="text-align:center;color:var(--muted);font-size:.95rem;margin-bottom:1.8rem;">Tout ce qu'il faut savoir avant de commander. Une autre question ? Écrivez-nous via le chat.</p>
+  <div class="faq-item" style="border:1px solid rgba(140,170,255,.15);border-radius:14px;margin-bottom:.7rem;background:rgba(12,20,46,.55);overflow:hidden;">
+    <button onclick="this.parentElement.classList.toggle('open')" style="width:100%;text-align:left;background:none;border:0;color:var(--text-2);font-weight:600;font-size:1rem;padding:1rem 1.2rem;cursor:pointer;font-family:inherit;">📥 Comment vais-je recevoir ma formation ?</button>
+    <div style="max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:.92rem;line-height:1.6;padding:0 1.2rem;">Dès que votre commande est confirmée, vous recevez la confirmation par email, puis le PDF de la formation sous 24-48 h. Livraison simple et rapide.</div>
+  </div>
+  <div class="faq-item" style="border:1px solid rgba(140,170,255,.15);border-radius:14px;margin-bottom:.7rem;background:rgba(12,20,46,.55);overflow:hidden;">
+    <button onclick="this.parentElement.classList.toggle('open')" style="width:100%;text-align:left;background:none;border:0;color:var(--text-2);font-weight:600;font-size:1rem;padding:1rem 1.2rem;cursor:pointer;font-family:inherit;">💶 Quels sont les prix et les formules ?</button>
+    <div style="max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:.92rem;line-height:1.6;padding:0 1.2rem;">Solo : 1 formation PDF au choix de 19 à 39 €. Pack Complet : les 7 formations pour 97 € (au lieu de 199 €). Pack Direction : les 7 + une session individuelle de 45 min avec le formateur pour 147 €.</div>
+  </div>
+  <div class="faq-item" style="border:1px solid rgba(140,170,255,.15);border-radius:14px;margin-bottom:.7rem;background:rgba(12,20,46,.55);overflow:hidden;">
+    <button onclick="this.parentElement.classList.toggle('open')" style="width:100%;text-align:left;background:none;border:0;color:var(--text-2);font-weight:600;font-size:1rem;padding:1rem 1.2rem;cursor:pointer;font-family:inherit;">🛡️ Y a-t-il une garantie ?</button>
+    <div style="max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:.92rem;line-height:1.6;padding:0 1.2rem;">Oui : 14 jours satisfait ou remboursé, sans condition. Si la formation ne vous apporte rien, écrivez-nous sous 14 jours pour un remboursement intégral.</div>
+  </div>
+  <div class="faq-item" style="border:1px solid rgba(140,170,255,.15);border-radius:14px;margin-bottom:.7rem;background:rgba(12,20,46,.55);overflow:hidden;">
+    <button onclick="this.parentElement.classList.toggle('open')" style="width:100%;text-align:left;background:none;border:0;color:var(--text-2);font-weight:600;font-size:1rem;padding:1rem 1.2rem;cursor:pointer;font-family:inherit;">🎯 Comment savoir par où commencer ?</button>
+    <div style="max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:.92rem;line-height:1.6;padding:0 1.2rem;">Faites le test de niveau gratuit (8 questions, 2 min) : il vous donne votre profil et la formation qui vous fait progresser le plus vite. <a href="outil.html" style="color:#7dd3fc;">Lancer le test →</a></div>
+  </div>
+  <div class="faq-item" style="border:1px solid rgba(140,170,255,.15);border-radius:14px;margin-bottom:.7rem;background:rgba(12,20,46,.55);overflow:hidden;">
+    <button onclick="this.parentElement.classList.toggle('open')" style="width:100%;text-align:left;background:none;border:0;color:var(--text-2);font-weight:600;font-size:1rem;padding:1rem 1.2rem;cursor:pointer;font-family:inherit;">🤖 Le Pack Direction, c'est pour qui ?</button>
+    <div style="max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:.92rem;line-height:1.6;padding:0 1.2rem;">Pour celles et ceux qui veulent aller plus vite : les 7 formations + une session individuelle de 45 min avec le formateur pour débloquer votre projet précis (agent IA, automatisation, lancement SaaS) avec un plan d'action sur mesure.</div>
+  </div>
+</div>
+<style>
+.faq-item.open > div{ max-height:240px !important; padding:0 1.2rem 1rem !important; }
+</style>
+
 <div class="footer">
   Une question ? Contact : <a href="https://dembis91-940.github.io/agentia/">Agentia — L'IA au travail dans votre entreprise</a><br>
   Paiement sécurisé simple — aucune carte demandée ici, confirmation humaine de votre commande.
@@ -256,19 +400,19 @@ a{transition:color .3s ease}
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 const FORMATIONS = [
-  { icone:"🧠", titre:"Maîtrisez les LLM (GPT, Claude, Grok)", promesse:"Choisir le bon modèle, des prompts pro, l'API pour automatiser — 5 h/semaine gagnées.", pdf:"27 €", complet:"47 €" },
-  { icone:"🤖", titre:"Créez vos agents IA (n8n + Hermes)", promesse:"2 agents déployés en 1 semaine, sans coder. Architecture, patterns RAG, garde-fous.", pdf:"37 €", complet:"67 €" },
-  { icone:"✍️", titre:"Prompt Engineering avancé", promesse:"Frameworks, rôles, pièges d'hallucination — des prompts qui marchent du premier coup.", pdf:"19 €", complet:"35 €" },
-  { icone:"⚙️", titre:"Automatisation IA (n8n & Make)", promesse:"Workflows qui rendent 5-10 h/semaine : avis, réservations, relances, reporting.", pdf:"29 €", complet:"49 €" },
-  { icone:"🛠️", titre:"SaaS IA sans code", promesse:"Créez et lancez un SaaS avec le vibe coding — comme les 4 business déjà en ligne.", pdf:"39 €", complet:"69 €" },
-  { icone:"💼", titre:"Vendre des agents IA aux PME", promesse:"Pitch, audit gratuit, objections, tarifs — le playbook pour vendre des agents.", pdf:"27 €", complet:"47 €" },
-  { icone:"🗃️", titre:"Systèmes RAG et bases de données", promesse:"Retrieval, embeddings, vector stores — vos documents, interrogeables par l'IA.", pdf:"29 €", complet:"49 €" },
+  { icone:"🧠", titre:"Maîtrisez les LLM (GPT, Claude, Grok)", promesse:"Choisir le bon modèle, des prompts pro, l'API pour automatiser — 5 h/semaine gagnées.", pdf:"19 €" },
+  { icone:"🤖", titre:"Créez vos agents IA (n8n + Hermes)", promesse:"2 agents déployés en 1 semaine, sans coder. Architecture, patterns RAG, garde-fous.", pdf:"37 €" },
+  { icone:"✍️", titre:"Prompt Engineering avancé", promesse:"Frameworks, rôles, pièges d'hallucination — des prompts qui marchent du premier coup.", pdf:"19 €" },
+  { icone:"⚙️", titre:"Automatisation IA (n8n & Make)", promesse:"Workflows qui rendent 5-10 h/semaine : avis, réservations, relances, reporting.", pdf:"29 €" },
+  { icone:"🛠️", titre:"SaaS IA sans code", promesse:"Créez et lancez un SaaS avec le vibe coding — comme les 4 business déjà en ligne.", pdf:"39 €" },
+  { icone:"💼", titre:"Vendre des agents IA aux PME", promesse:"Pitch, audit gratuit, objections, tarifs — le playbook pour vendre des agents.", pdf:"27 €" },
+  { icone:"🗃️", titre:"Systèmes RAG et bases de données", promesse:"Retrieval, embeddings, vector stores — vos documents, interrogeables par l'IA.", pdf:"29 €" },
 ];
 document.getElementById('catalogue').innerHTML = FORMATIONS.map(f => `
   <div class="card reveal">
     <h3>${f.icone} ${f.titre}</h3>
     <div class="promise">${f.promesse}</div>
-    <div class="price"><span class="pdf">${f.pdf}</span><span class="complet">pack complet ${f.complet}</span></div>
+    <div class="price"><span class="pdf">${f.pdf}</span><span class="promo">Pack Complet : les 7 pour 97 €</span></div>
     <a class="btn" href="#commander" onclick="document.getElementById('f-formation').value='${f.titre.replace(/'/g,"\\'")} — ${f.pdf}';return true;">Commander</a>
   </div>`).join('');
 
