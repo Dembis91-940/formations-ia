@@ -389,7 +389,7 @@ a{transition:color .3s ease}
 
 <div class="order" id="commander">
   <h2 class="reveal">📦 Commander une formation</h2>
-  <p style="text-align:center;color:#9fb0c9;font-size:.9rem;">Après votre commande, vous recevez la confirmation par email et le paiement se fait en toute simplicité (virement ou message privé). Le PDF vous est envoyé dès réception.</p>
+  <p style="text-align:center;color:#9fb0c9;font-size:.9rem;">Choisissez votre formation, puis payez en ligne par carte bancaire (paiement sécurisé Stripe). Le PDF vous est livré par email sous 24-48 h.</p>
   <label>Formation</label>
   <select id="f-formation">
     <option>🧠 Maîtrisez les LLM (GPT, Claude, Grok) — 19 €</option>
@@ -402,12 +402,8 @@ a{transition:color .3s ease}
     <option>🎁 Pack (les 7 formations) — 97 €</option>
     <option>🚀 Direction (les 7 + session 45 min + accompagnement) — 147 €</option>
   </select>
-  <label>Votre nom</label>
-  <input id="f-nom" placeholder="Prénom Nom" required>
-  <label>Votre email</label>
-  <input id="f-email" type="email" placeholder="vous@email.fr" required>
-  <button onclick="commander()">Commander →</button>
-  <div class="ok" id="ok">✅ Demande envoyée ! Vous recevrez la confirmation par email très vite.</div>
+  <button onclick="commander()">Payer avec Stripe — carte bancaire →</button>
+  <div class="ok" id="ok" style="display:none"></div>
 </div>
 
 <div class="faq" id="faq" style="max-width:860px;margin:0 auto;padding:2.5rem 6vw;">
@@ -440,10 +436,10 @@ a{transition:color .3s ease}
 
 <div class="footer">
   Une question ? Contact : <a href="https://dembis91-940.github.io/agentia/">Agentia — L'IA au travail dans votre entreprise</a><br>
-  Paiement sécurisé simple — aucune carte demandée ici, confirmation humaine de votre commande.
+  Paiement sécurisé par Stripe (carte bancaire) — livraison du PDF par email sous 24-48 h.
+  <a href="cgv.html" style="font-size:.85rem;opacity:.8">CGV &amp; mentions légales</a>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 const FORMATIONS = [
   { icone:"🧠", titre:"Maîtrisez les LLM (GPT, Claude, Grok)", promesse:"Choisir le bon modèle, des prompts pro, l'API pour automatiser — 5 h/semaine gagnées.", pdf:"19 €" },
@@ -462,19 +458,20 @@ document.getElementById('catalogue').innerHTML = FORMATIONS.map(f => `
     <a class="btn" href="#commander" onclick="document.getElementById('f-formation').value='${f.titre.replace(/'/g,"\\'")} — ${f.pdf}';return true;">Commander</a>
   </div>`).join('');
 
-emailjs.init("8Pui4ZEqxW2jRVF7h");
-
+/* Stripe : paiement par carte (remplace EmailJS) */
+const STRIPE_LINKS = {
+  19: 'https://buy.stripe.com/7sY9AV5YO3LL6nb8m8frW0b',
+  27: 'https://buy.stripe.com/8x23cxcnc5TTeTHeKwfrW0f',
+  29: 'https://buy.stripe.com/28EcN71Iy965dPD59WfrW0d',
+  37: 'https://buy.stripe.com/cNi5kF3QG3LLdPD59WfrW0c',
+  39: 'https://buy.stripe.com/28E5kF2MCcih9zn6e0frW0e',
+  97: 'https://buy.stripe.com/8x214pcncbed7rf8m8frW0g',
+  147: 'https://buy.stripe.com/cNifZj2MC2HH8vj31OfrW0h'
+};
 function commander(){
-  const data = {
-    site: "Formations IA",
-    name: document.getElementById('f-nom').value,
-    email: document.getElementById('f-email').value,
-    question: "Commande : " + document.getElementById('f-formation').value
-  };
-  if(!data.name || !data.email){ alert("Merci de remplir nom et email."); return; }
-  emailjs.send("service_cy1ytdb", "template_xpo58cv", data).then(()=>{
-    document.getElementById('ok').style.display='block';
-  }).catch(e=>{ alert("Erreur d'envoi : " + e.text); });
+  const v = document.getElementById('f-formation').value;
+  const m = /(\d+)\s*€/.exec(v);
+  window.location.href = STRIPE_LINKS[m ? parseInt(m[1], 10) : 19];
 }
 </script>
 
