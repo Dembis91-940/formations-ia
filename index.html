@@ -315,6 +315,17 @@ a{transition:color .3s ease}
   <p style="margin-top:1.2rem"><a class="btn" href="outil.html" style="margin-top:0">🎯 Tester mon niveau IA gratuitement (2 min) →</a></p>
 </div>
 
+<div class="defi-banner" style="max-width:1150px;margin:1.4rem auto 0;padding:1.1rem 1.6rem;background:linear-gradient(120deg,rgba(45,212,191,.12),rgba(56,189,248,.10)),rgba(12,20,46,.7);backdrop-filter:blur(14px);border:1px solid rgba(45,212,191,.45);border-radius:16px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;box-shadow:0 10px 34px rgba(45,212,191,.12);">
+  <div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;">
+    <span style="font-size:1.7rem;line-height:1">🔥</span>
+    <div>
+      <strong style="font-family:'Urbanist',sans-serif;color:#fff;font-size:1rem;">Défi 30 jours IA — Cohort #1</strong>
+      <p style="color:#A9B8D8;font-size:.86rem;margin-top:.15rem;">Un process de votre business automatisé en 30 jours, un livrable par semaine, démos réelles. <b style="color:#5eead4;">Début 5 octobre · 30 places · 39 €</b></p>
+    </div>
+  </div>
+  <a class="btn" href="defi-30-jours.html" style="margin:0;white-space:nowrap;">Voir le défi →</a>
+</div>
+
 <div class="arg-grid">
   <div class="arg reveal"><div class="a-ico">⏱️</div><h3>5-10 h récupérées par semaine</h3><p>Chaque formation vise un résultat mesurable : des workflows qui tournent seuls, des prompts qui marchent du premier coup, des agents déployés en 1 semaine.</p></div>
   <div class="arg reveal"><div class="a-ico">🧩</div><h3>Zéro blabla, 100 % action</h3><p>Modules + exemples réels + exercices corrigés + checklist. Vous finissez chaque pack avec un livrable concret, pas avec des notes de cours.</p></div>
@@ -369,6 +380,84 @@ a{transition:color .3s ease}
       <a class="btn" href="#commander" onclick="document.getElementById('f-formation').value='🚀 Direction (les 7 + session 45 min + accompagnement) — 147 €';return true;" style="text-align:center;">Réserver ma place — 147 €</a>
     </div>
   </div>
+</div>
+
+<!-- ============================================================
+     ESCALIER DE MONÉTISATION (benchmark vendeurs de formations, 06/09)
+     Gratuit → Découverte → Maîtrise → Direction → Premium.
+     Liens réels : lead magnet Agentia, commander Stripe, SkillVault.
+     ============================================================ -->
+<style>
+  .ladder { max-width:1150px; margin:2.2rem auto 0; padding:2.6rem 1.2rem 1.4rem; background:
+      radial-gradient(760px 320px at 8% 0%, rgba(99,102,241,.16), transparent 60%),
+      radial-gradient(700px 300px at 96% 8%, rgba(45,212,191,.10), transparent 60%),
+      rgba(12,20,46,.35); border:1px solid rgba(140,170,255,.14); border-radius:24px; }
+  .ladder h2 { text-align:center; font-size:clamp(1.5rem,3.4vw,2.1rem); margin-bottom:.4rem; font-family:'Urbanist',sans-serif; }
+  .ladder .ladder-sub { text-align:center; color:var(--muted); font-size:.95rem; max-width:660px; margin:0 auto 1.8rem; }
+  .ladder-track { display:grid; grid-template-columns:repeat(5,1fr); gap:.9rem; align-items:stretch; }
+  .lstep { position:relative; background:rgba(255,255,255,.045); border:1px solid rgba(140,170,255,.16); border-radius:18px; padding:1.5rem 1.2rem 1.3rem; display:flex; flex-direction:column; transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+  .lstep:hover { transform:translateY(-4px); border-color:#6366F188; box-shadow:0 14px 40px rgba(99,102,241,.28); }
+  .lstep .lfloor { display:flex; justify-content:space-between; align-items:center; margin-bottom:.7rem; }
+  .lstep .lfloor b { font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:#7dd3fc; }
+  .lstep .lfloor .dot { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.68rem; font-weight:800; }
+  .lstep.l0 .dot { background:linear-gradient(135deg,#7dd3fc,#38bdf8); color:#050A1E; }
+  .lstep.l1 .dot { background:linear-gradient(135deg,#38bdf8,#6366f1); color:#fff; }
+  .lstep.l2 .dot { background:linear-gradient(135deg,#6366f1,#818cf8); color:#fff; }
+  .lstep.l3 .dot { background:linear-gradient(135deg,#818cf8,#a78bfa); color:#fff; }
+  .lstep.l4 .dot { background:linear-gradient(135deg,#2dd4bf,#34d399); color:#050A1E; }
+  .lstep h3 { font-size:1.02rem; margin-bottom:.35rem; }
+  .lstep .lprice { font-size:1.35rem; font-weight:800; letter-spacing:-.01em; background:linear-gradient(135deg,#38BDF8,#2DD4BF); -webkit-background-clip:text; background-clip:text; color:transparent; margin-bottom:.55rem; }
+  .lstep p { font-size:.83rem; color:#A9B8D8; line-height:1.55; flex:1; margin-bottom:1rem; }
+  .lstep a.lcta { display:block; text-align:center; text-decoration:none; font-weight:700; font-size:.88rem; padding:.68rem .5rem; border-radius:11px; background:linear-gradient(135deg,#6366F1,#38BDF8,#2DD4BF); background-size:200% 200%; color:#fff; animation:f3gradmove 6s ease infinite; box-shadow:0 6px 20px rgba(99,102,241,.3); transition:transform .2s ease; }
+  .lstep a.lcta:hover { transform:translateY(-2px); }
+  .lstep.l0 a.lcta, .lstep.l4 a.lcta { background:linear-gradient(135deg,#2DD4BF,#34d399); box-shadow:0 6px 20px rgba(45,212,191,.25); }
+  .larrow { display:none; }
+  .ladder-note { text-align:center; color:#7C8AA5; font-size:.78rem; margin-top:1.2rem; }
+  @media(max-width:980px){ .ladder-track { grid-template-columns:1fr 1fr; } }
+  @media(max-width:620px){ .ladder-track { grid-template-columns:1fr; } }
+</style>
+
+<div class="ladder" id="escalier">
+  <h2>Un parcours, pas un rayon</h2>
+  <p class="ladder-sub">Commencez gratuit, montez quand vous êtes prêt. Chaque palier vous prépare au suivant — et vous pouvez entrer à n'importe quel étage.</p>
+  <div class="ladder-track">
+    <div class="lstep l0">
+      <div class="lfloor"><b>Palier 0 · Gratuit</b><span class="dot">0</span></div>
+      <h3>Guide 10 automatisations IA</h3>
+      <div class="lprice">0 €</div>
+      <p>Le lead magnet : 10 automatisations concrètes (impayés, avis Google, emails, réunions…) avec les prompts prêts à copier. La preuve avant la vente.</p>
+      <a class="lcta" href="https://dembis91-940.github.io/agentia/automatisations-ia.html" target="_blank" rel="noopener">Recevoir le guide →</a>
+    </div>
+    <div class="lstep l1">
+      <div class="lfloor"><b>Palier 1 · Découverte</b><span class="dot">1</span></div>
+      <h3>Une formation PDF au choix</h3>
+      <div class="lprice">dès 19 €</div>
+      <p>LLM, agents IA, prompts, automatisation, SaaS sans code… Un sujet, un livrable concret à la fin. Idéal pour tester la méthode.</p>
+      <a class="lcta" href="#commander" onclick="document.getElementById('f-formation').value='🧠 Maîtrisez les LLM (GPT, Claude, Grok) — 19 €';return true;">Choisir — dès 19 €</a>
+    </div>
+    <div class="lstep l2">
+      <div class="lfloor"><b>Palier 2 · Maîtrise</b><span class="dot">2</span></div>
+      <h3>Pack Complet — les 7</h3>
+      <div class="lprice">97 € <span style="font-size:.85rem;text-decoration:line-through;color:#7C8AA5;background:none;-webkit-background-clip:initial;background-clip:initial;">199 €</span></div>
+      <p>Tout le parcours, plus de 150 pages : LLM, agents, prompts, n8n, SaaS, vente aux PME, RAG. Le meilleur rapport qualité-prix.</p>
+      <a class="lcta" href="#commander" onclick="document.getElementById('f-formation').value='🎁 Pack (les 7 formations) — 97 €';return true;">Commander le Pack — 97 €</a>
+    </div>
+    <div class="lstep l3">
+      <div class="lfloor"><b>Palier 3 · Direction</b><span class="dot">3</span></div>
+      <h3>Pack Complet + session 45 min</h3>
+      <div class="lprice">147 €</div>
+      <p>Le parcours entier + 1 session individuelle avec le formateur pour débloquer VOTRE projet. Module ChatGPT Ads offert (10 premiers).</p>
+      <a class="lcta" href="#commander" onclick="document.getElementById('f-formation').value='🚀 Direction (les 7 + session 45 min + accompagnement) — 147 €';return true;">Réserver ma place — 147 €</a>
+    </div>
+    <div class="lstep l4">
+      <div class="lfloor"><b>Palier 4 · Premium</b><span class="dot">4</span></div>
+      <h3>SkillVault — le coffre d'outils</h3>
+      <div class="lprice">29 à 197 €</div>
+      <p>Le niveau au-dessus des PDF : skills prêts à l'emploi, engine, guides d'installation — pour construire et déployer vos propres systèmes IA.</p>
+      <a class="lcta" href="https://dembis91-940.github.io/skillvault/" target="_blank" rel="noopener">Découvrir SkillVault →</a>
+    </div>
+  </div>
+  <p class="ladder-note">Garantie 14 jours satisfait ou remboursé sur chaque pack · Paiement sécurisé Stripe · Les packs sont livrés par email sous 24-48 h</p>
 </div>
 
 <div class="chatgpt-ads" id="chatgpt-ads" style="max-width:860px;margin:2rem auto 0;padding:2rem 1.6rem;background:linear-gradient(160deg,rgba(56,189,248,.12),rgba(99,102,241,.08)),rgba(12,20,46,.6);backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(56,189,248,.35);border-radius:20px;box-shadow:0 12px 42px rgba(99,102,241,.25);">

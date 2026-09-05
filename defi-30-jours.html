@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Défi 30 jours IA — Cohort #1 (5 octobre 2026) · Formations IA</title>
+<meta name="description" content="30 jours pour automatiser UN process de votre business avec l'IA : 1 livrable concret chaque semaine, démos réelles, cohort limitée à 30 places. Début le 5 octobre 2026. 39 €, garantie 14 jours.">
+<meta property="og:title" content="Défi 30 jours IA — Cohort #1 · Automatisez UN process de votre business">
+<meta property="og:description" content="30 jours, 1 process automatisé, 1 livrable par semaine. Cohort limitée à 30 places — début 5 octobre 2026. 39 €.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23050A1E'/><path d='M8 22 L8 12 L16 12 L16 20 L24 20' fill='none' stroke='%2338BDF8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/><circle cx='24' cy='12' r='3' fill='%2338BDF8'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#050A1E; --bg2:#0A1028; --card:rgba(255,255,255,.045);
+    --text:#EAF2FF; --text2:#A9B8D8; --muted:#7C8AA5;
+    --indigo:#6366F1; --sky:#38BDF8; --skyb:#7DD3FC; --teal:#2DD4BF;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:#050A1E; color:var(--text); font-family:'Inter',system-ui,sans-serif; overflow-x:hidden; }
+  body::before { content:""; position:fixed; inset:0; background:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px); background-size:34px 34px; pointer-events:none; z-index:0; }
+  h1,h2,h3,h4 { font-family:'Urbanist',sans-serif; letter-spacing:-.015em; color:var(--text); }
+  a { color:var(--skyb); }
+  .nav { position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:1.2rem; padding:.85rem 6vw; background:rgba(8,13,34,.8); backdrop-filter:blur(16px); border-bottom:1px solid rgba(140,170,255,.14); }
+  .nav .brand { font-family:'Urbanist',sans-serif; font-weight:800; color:#fff; text-decoration:none; letter-spacing:-.01em; }
+  .nav .brand i { font-style:normal; background:linear-gradient(135deg,#38BDF8,#2DD4BF); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .nav .links { margin-left:auto; display:flex; gap:.2rem; }
+  .nav .links a { color:var(--text2); text-decoration:none; font-size:.88rem; padding:.45rem .8rem; border-radius:9px; }
+  .nav .links a:hover { color:#fff; background:rgba(255,255,255,.06); }
+  .nav .links a.cta { background:linear-gradient(135deg,#6366F1,#38BDF8,#2DD4BF); background-size:200% 200%; color:#fff; font-weight:700; animation:gradmove 6s ease infinite; }
+  @keyframes gradmove { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+  @keyframes float { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(3vmax,-2vmax) scale(1.06)} 66%{transform:translate(-2vmax,2vmax) scale(.97)} }
+  .wrap { position:relative; z-index:1; max-width:1150px; margin:0 auto; padding:0 6vw; }
+  .hero { position:relative; padding:4.4rem 0 3.4rem; background:radial-gradient(900px 420px at 10% -10%, rgba(99,102,241,.22), transparent 60%), radial-gradient(760px 460px at 90% 12%, rgba(56,189,248,.15), transparent 62%); }
+  .hero .orbs { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+  .hero .orbs div { position:absolute; border-radius:50%; filter:blur(90px); opacity:.5; }
+  .badge { display:inline-block; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; font-weight:800; background:linear-gradient(135deg,#2DD4BF,#38BDF8); color:#050A1E; border-radius:999px; padding:.32rem .9rem; margin-bottom:1.1rem; }
+  .badge.hot { background:linear-gradient(135deg,#38BDF8,#6366F1); }
+  .hero h1 { font-size:clamp(2rem,5.2vw,3.4rem); line-height:1.05; font-weight:900; max-width:17em; }
+  .hero h1 .grad { background:linear-gradient(120deg,#a78bfa,#38bdf8,#2dd4bf); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero .sub { max-width:40em; color:var(--text2); font-size:1.05rem; line-height:1.65; margin-top:1.2rem; }
+  .hero .meta { display:flex; flex-wrap:wrap; gap:.6rem 1.4rem; margin-top:1.4rem; font-size:.9rem; color:#7dd3fc; font-weight:600; }
+  .hero .meta span::before { content:"✓ "; }
+  .cta-row { display:flex; flex-wrap:wrap; gap:1rem; align-items:center; margin-top:1.8rem; }
+  .btn { display:inline-block; text-decoration:none; font-weight:800; font-size:1rem; padding:.95rem 1.7rem; border-radius:13px; transition:transform .2s ease, box-shadow .2s ease; }
+  .btn.primary { background:linear-gradient(135deg,#38BDF8,#2DD4BF); color:#050A1E; box-shadow:0 10px 34px rgba(56,189,248,.35); }
+  .btn.primary:hover { transform:translateY(-3px); box-shadow:0 16px 44px rgba(56,189,248,.5); }
+  .btn.secondary { background:rgba(99,102,241,.14); color:#c7d2fe; border:1px solid rgba(129,140,248,.4); }
+  .btn.secondary:hover { transform:translateY(-3px); }
+  .btn .small { font-size:.8rem; opacity:.85; display:block; font-weight:600; }
+  .btn .big { font-size:1.15rem; display:block; }
+  .section { padding:3.6rem 0; }
+  .section h2 { font-size:clamp(1.6rem,3.6vw,2.2rem); text-align:center; margin-bottom:.5rem; }
+  .section .s-sub { text-align:center; color:var(--muted); max-width:680px; margin:0 auto 2.2rem; font-size:.98rem; line-height:1.6; }
+  .grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.1rem; }
+  .card { background:rgba(12,20,46,.6); border:1px solid rgba(140,170,255,.15); border-radius:18px; padding:1.6rem 1.5rem; backdrop-filter:blur(16px); transition:transform .25s ease, border-color .25s ease; }
+  .card:hover { transform:translateY(-4px); border-color:#6366F166; }
+  .card .ico { font-size:1.7rem; margin-bottom:.6rem; }
+  .card h3 { font-size:1.08rem; margin-bottom:.45rem; }
+  .card p { color:var(--text2); font-size:.9rem; line-height:1.6; }
+  .timeline { max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:1rem; }
+  .tl { display:flex; gap:1.2rem; align-items:flex-start; background:rgba(12,20,46,.55); border:1px solid rgba(140,170,255,.13); border-radius:16px; padding:1.3rem 1.4rem; }
+  .tl .wk { min-width:64px; height:64px; border-radius:14px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,#6366F1,#38BDF8); color:#fff; font-family:'Urbanist',sans-serif; font-weight:800; }
+  .tl .wk small { font-size:.58rem; text-transform:uppercase; letter-spacing:.1em; opacity:.85; }
+  .tl h3 { font-size:1.05rem; margin-bottom:.3rem; }
+  .tl p { color:var(--text2); font-size:.9rem; line-height:1.6; }
+  .price-panel { max-width:640px; margin:0 auto; text-align:center; background:linear-gradient(160deg,rgba(99,102,241,.16),rgba(56,189,248,.08)),rgba(12,20,46,.7); border:1.5px solid rgba(129,140,248,.5); border-radius:22px; padding:2.4rem 2rem; box-shadow:0 18px 60px rgba(99,102,241,.25); }
+  .price-panel .was { color:var(--muted); text-decoration:line-through; font-size:1rem; }
+  .price-panel .now { font-size:3rem; font-weight:900; font-family:'Urbanist',sans-serif; background:linear-gradient(135deg,#38BDF8,#2DD4BF); -webkit-background-clip:text; background-clip:text; color:transparent; line-height:1.1; }
+  .price-panel .per { color:var(--muted); font-size:.9rem; }
+  .price-panel ul { list-style:none; text-align:left; max-width:430px; margin:1.4rem auto 0; }
+  .price-panel li { padding:.4rem 0 .4rem 1.6rem; position:relative; color:var(--text2); font-size:.93rem; }
+  .price-panel li::before { content:"✓"; position:absolute; left:0; color:#2DD4BF; font-weight:800; }
+  .cohort-note { margin-top:1.1rem; display:inline-block; background:rgba(45,212,191,.1); border:1px solid rgba(45,212,191,.35); border-radius:999px; padding:.4rem 1rem; color:#5eead4; font-size:.85rem; font-weight:600; }
+  .seats { display:flex; justify-content:center; gap:.28rem; margin:1.2rem 0 .4rem; }
+  .seats span { width:14px; height:14px; border-radius:4px; background:linear-gradient(135deg,#6366F1,#38BDF8); opacity:.85; }
+  .seats span.free { opacity:.14; }
+  .seats-cap { color:var(--muted); font-size:.8rem; }
+  form.insc { max-width:560px; margin:1.6rem auto 0; background:rgba(12,20,46,.7); border:1px solid rgba(140,170,255,.18); border-radius:18px; padding:1.6rem; }
+  form.insc label { display:block; font-size:.84rem; color:var(--text2); margin:.9rem 0 .35rem; }
+  form.insc input[type=text], form.insc input[type=email] { width:100%; padding:.75rem .9rem; border-radius:10px; border:1px solid rgba(255,255,255,.14); background:#0A1028; color:var(--text); font-size:.95rem; font-family:'Inter',sans-serif; }
+  form.insc .check { display:flex; gap:.6rem; align-items:flex-start; margin-top:1rem; font-size:.78rem; color:var(--muted); line-height:1.5; }
+  form.insc .check input { margin-top:.15rem; }
+  form.insc button { width:100%; margin-top:1.1rem; padding:.95rem; border:0; border-radius:12px; background:linear-gradient(135deg,#38BDF8,#2DD4BF); color:#050A1E; font-weight:800; font-size:1rem; cursor:pointer; font-family:'Urbanist',sans-serif; }
+  .err-box { display:none; background:rgba(255,80,80,.12); border:1px solid rgba(255,90,63,.4); color:#ffb4a6; border-radius:10px; padding:.7rem .9rem; font-size:.86rem; margin-top:.8rem; }
+  .faq { max-width:720px; margin:0 auto; }
+  details { background:rgba(12,20,46,.55); border:1px solid rgba(140,170,255,.13); border-radius:13px; padding:1rem 1.2rem; margin-bottom:.7rem; }
+  summary { cursor:pointer; font-weight:700; font-family:'Urbanist',sans-serif; font-size:.98rem; color:var(--text); }
+  details p { color:var(--text2); font-size:.9rem; line-height:1.6; margin-top:.6rem; }
+  .footer { position:relative; z-index:1; text-align:center; color:#7c8aa5; padding:2.4rem 6vw 3rem; font-size:.85rem; border-top:1px solid rgba(140,170,255,.12); }
+  .footer a { color:#7dd3fc; }
+  @media(max-width:640px){ .nav .links a:not(.cta){ display:none; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">Formations<i>IA</i></a>
+  <div class="links">
+    <a href="index.html#catalogue">Catalogue</a>
+    <a href="index.html#escalier">Le parcours</a>
+    <a href="defi-30-jours.html" style="color:#5eead4">Défi 30 jours</a>
+    <a href="index.html#commander">Commander</a>
+    <a class="cta" href="#inscription">Rejoindre la cohort #1 →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="orbs" aria-hidden="true">
+    <div style="width:55vmax;height:55vmax;background:radial-gradient(circle,rgba(99,102,241,.2),transparent 60%);left:-15vmax;top:-15vmax;animation:float 18s ease-in-out infinite"></div>
+    <div style="width:45vmax;height:45vmax;background:radial-gradient(circle,rgba(56,189,248,.16),transparent 60%);right:-12vmax;top:30%;animation:float 24s ease-in-out infinite reverse"></div>
+  </div>
+  <div class="wrap">
+    <span class="badge hot">🔥 Cohort #1 — places limitées</span>
+    <h1>30 jours pour automatiser <span class="grad">UN process</span> de votre business avec l'IA.</h1>
+    <p class="sub">Pas une formation de plus. Un défi : en 30 jours, un process réel de votre entreprise passe en automatisation — avec un livrable concret chaque semaine, des démos qui tournent vraiment, et un groupe pour ne pas rester seul.</p>
+    <div class="meta">
+      <span>Début : lundi 5 octobre 2026</span>
+      <span>1 livrable concret par semaine</span>
+      <span>Cohort limitée à 30 places</span>
+      <span>Démos réelles, pas de slides</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" href="#inscription"><span class="small">Je rejoins la cohort #1</span><span class="big">39 € · 30 jours</span></a>
+      <a class="btn secondary" href="#programme">Voir le programme des 4 semaines</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="pourquoi">
+  <div class="wrap">
+    <h2>Pourquoi un défi, et pas une formation de plus ?</h2>
+    <p class="s-sub">Parce que le problème n'est pas le savoir — c'est le passage à l'action. Un format court avec un objectif unique et des échéances hebdomadaires fait ce qu'aucun PDF ne fait : vous faire finir.</p>
+    <div class="grid3">
+      <div class="card"><div class="ico">🎯</div><h3>Un seul process, pas dix</h3><p>Vous choisissez UN process pénible (relances, devis, avis, compte-rendus…). En 30 jours, il tourne — au lieu de 10 projets commencés et aucun fini.</p></div>
+      <div class="card"><div class="ico">📦</div><h3>Un livrable chaque semaine</h3><p>Semaine 1 : le diagnostic chiffré. Semaine 2 : le prompt qui marche. Semaine 3 : l'automatisation en conditions réelles. Semaine 4 : en production, mesuré.</p></div>
+      <div class="card"><div class="ico">🔧</div><h3>Des démos réelles, pas de théorie</h3><p>Chaque module s'appuie sur des automatisations qui tournent déjà en production chez de vraies PME (relances, avis Google, WhatsApp, comptes-rendus).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="programme" style="padding-top:0">
+  <div class="wrap">
+    <h2>Le programme des 4 semaines</h2>
+    <p class="s-sub">Du lundi 5 octobre au mardi 3 novembre 2026. Une heure par semaine en direct + le travail sur votre process.</p>
+    <div class="timeline">
+      <div class="tl"><div class="wk"><small>Semaine</small>1</div><div><h3>Diagnostic : le process qui vous coûte le plus cher</h3><p>On choisit LE process à automatiser (critères : répétitif, pénible, mesurable). Livrable : votre fiche process avec le temps passé et le prompt de départ.</p></div></div>
+      <div class="tl"><div class="wk"><small>Semaine</small>2</div><div><h3>Le prompt qui marche — testé sur du réel</h3><p>Rédaction, test et correction du prompt sur un cas réel de votre entreprise. Livrable : votre prompt validé + le jeu de test qui prouve qu'il marche.</p></div></div>
+      <div class="tl"><div class="wk"><small>Semaine</small>3</div><div><h3>Passage en semi-automatique</h3><p>On branche l'outil (n8n, Make, agent, API) avec validation humaine. Livrable : votre automatisation qui tourne en conditions réelles, sans surveillance.</p></div></div>
+      <div class="tl"><div class="wk"><small>Semaine</small>4</div><div><h3>En production + mesure du temps gagné</h3><p>Consolidation, garde-fous, mesure avant/après. Livrable : votre process automatisé en production et le chiffre d'heures récupérées par semaine.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <h2>Ce qui est inclus dans la cohort</h2>
+    <p class="s-sub">Tout est pensé pour que vous finissiez avec un process qui tourne — pas avec un carnet de notes.</p>
+    <div class="grid3">
+      <div class="card"><div class="ico">📹</div><h3>4 sessions live (1 h)</h3><p>Chaque lundi, la démonstration réelle de la semaine + vos questions. Replay dispo si vous ratez.</p></div>
+      <div class="card"><div class="ico">📝</div><h3>Livrables hebdomadaires</h3><p>Fiches, templates et prompts de chaque semaine, prêts à adapter à votre process.</p></div>
+      <div class="card"><div class="ico">💬</div><h3>Groupe privé de la cohort</h3><p>Pour partager vos avancées, débloquer un blocage et vous motiver jusqu'au bout. La cohort, c'est 30 personnes qui avancent ensemble.</p></div>
+      <div class="card"><div class="ico">⚖️</div><h3>Garantie 14 jours</h3><p>Vous suivez les 2 premières semaines et vous estimez que ça n'avance pas ? Remboursé, sans condition.</p></div>
+      <div class="card"><div class="ico">🧭</div><h3>La suite naturelle</h3><p>En fin de défi, vous savez exactement quel palier vous convient : Pack Complet, SkillVault, ou l'audit Agentia pour automatiser le reste.</p></div>
+      <div class="card"><div class="ico">📄</div><h3>Le guide offert</h3><p>Les « 10 automatisations IA avec prompts » incluses pour les inscrits (9 pages, prêtes à copier).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="inscription" style="padding-top:0">
+  <div class="wrap">
+    <h2>Rejoindre la cohort #1</h2>
+    <p class="s-sub">Prochaine cohort : janvier 2027. Celle-ci est limitée à 30 places — une cohorte réelle, pas un compteur marketing.</p>
+    <div class="price-panel">
+      <div><span class="was">—</span> <span class="now">39 €</span> <span class="per">/ une fois · tout inclus</span></div>
+      <div class="cohort-note">Cohort #1 · du 5 octobre au 3 novembre 2026</div>
+      <div class="seats" aria-hidden="true" id="seats"></div>
+      <div class="seats-cap" id="seats-cap">30 places — cohorte réelle. Inscriptions ouvertes jusqu'au 2 octobre 2026.</div>
+      <ul>
+        <li>4 sessions live + replays</li>
+        <li>Livrables et templates de chaque semaine</li>
+        <li>Groupe privé de la cohort</li>
+        <li>Garantie 14 jours satisfait ou remboursé</li>
+        <li>Paiement sécurisé Stripe (carte bancaire)</li>
+      </ul>
+    </div>
+
+    <form class="insc" id="form-defi" novalidate>
+      <p style="text-align:center;color:var(--text2);font-size:.95rem;font-weight:600;margin-bottom:.4rem">Réserver ma place — 39 €</p>
+      <p style="text-align:center;color:var(--muted);font-size:.8rem;margin-bottom:.6rem">Laissez vos coordonnées, vous serez redirigé vers le paiement sécurisé Stripe.</p>
+      <label for="d-nom">Votre prénom</label>
+      <input type="text" id="d-nom" name="nom" autocomplete="given-name" placeholder="Ex. : Camille">
+      <label for="d-email">Email professionnel <span style="color:#ff8a6b">*</span></label>
+      <input type="email" id="d-email" name="email" autocomplete="email" placeholder="vous@entreprise.fr">
+      <div style="display:none" aria-hidden="true"><label>Site web</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+      <label class="check"><input type="checkbox" id="d-consent"> <span>J'accepte que mes coordonnées servent à préparer mon inscription au Défi 30 jours IA et à me recontacter (RGPD). Elles ne sont jamais revendues.</span></label>
+      <div class="err-box" id="d-errors"></div>
+      <button type="submit" id="d-btn">Je réserve ma place — 39 € →</button>
+      <p style="text-align:center;color:var(--muted);font-size:.75rem;margin-top:.7rem">Paiement par carte via Stripe. En cas de doute, écrivez-nous : agentiadeploiement@gmail.com</p>
+    </form>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap faq">
+    <h2>Vos questions</h2>
+    <p class="s-sub" style="margin-bottom:1.6rem"></p>
+    <details open><summary>Je ne suis pas technophile, c'est pour moi ?</summary><p>Oui — c'est même le public principal. Vous n'écrivez pas de code : vous copiez-collez des prompts, vous validez des textes, vous cliquez dans des outils visuels (ChatGPT, n8n, Make). Si vous savez envoyer un email, vous pouvez suivre.</p></details>
+    <details><summary>Combien de temps par semaine ?</summary><p>Comptez 2 à 3 heures par semaine : la session live du lundi (1 h, ou le replay) + le travail sur votre process. Le reste du temps, votre automatisation travaille pour vous.</p></details>
+    <details><summary>Et si je rate une session ?</summary><p>Chaque session est enregistrée : vous avez accès aux replays pendant toute la durée du défi, et le groupe privé reste ouvert pour poser vos questions.</p></details>
+    <details><summary>Quel process choisir si je n'ai pas d'idée ?</summary><p>La semaine 1 est précisément faite pour ça : on vous donne les critères et la liste des 10 process les plus rentables (impayés, avis Google, devis, compte-rendus, emails…). Vous repartez avec un choix chiffré, pas une intuition.</p></details>
+    <details><summary>La garantie, concrètement ?</summary><p>Vous suivez les semaines 1 et 2, vous faites le travail demandé, et si vous estimez que le défi ne vous apporte rien, écrivez-nous sous 14 jours après le début : remboursement intégral, sans discussion.</p></details>
+  </div>
+</section>
+
+<footer class="footer">
+  <p><a href="index.html">Formations IA — le catalogue complet</a> · <a href="index.html#escalier">Le parcours</a> · <a href="https://dembis91-940.github.io/agentia/">Agentia</a></p>
+  <p style="margin-top:.5rem">Paiement sécurisé par Stripe · Garantie 14 jours · <a href="cgv.html">CGV &amp; mentions légales</a></p>
+  <p style="margin-top:.5rem">© 2026 Formations IA — Demba Koita-Laha · Une question ? agentiadeploiement@gmail.com</p>
+</footer>
+
+<script>
+/* Compteur de places — VRAI nombre de la cohort (30), affiché sans fausse urgence.
+   Le suivi des réservations est manuel (boîte de prospection) ; aucune donnée inventée. */
+(function(){
+  var TOTAL = 30;
+  var seats = document.getElementById('seats');
+  if(seats){
+    var html = '';
+    for(var i=0;i<TOTAL;i++){ html += '<span></span>'; }
+    seats.innerHTML = html;
+  }
+})();
+</script>
+<script>
+/* ============================================================
+   Défi 30 jours IA — inscription
+   1) EmailJS : notification auteur (template_xpo58cv — à recréer au
+      dashboard si absent ; l'échec d'envoi ne bloque JAMAIS le paiement)
+   2) Redirection vers le Payment Link Stripe réel de la cohort #1
+   Le paiement Stripe est le validateur d'inscription.
+   ============================================================ */
+(function(){
+  "use strict";
+  var PAY_URL = 'https://buy.stripe.com/dRm3cx1Iy5TT6nbeKwfrW0n'; /* Cohort #1 · 39 € */
+  var CFG = { serviceId:'service_cy1ytdb', templateId:'template_xpo58cv', publicKey:'8Pui4ZEqxW2jRVF7h' };
+  var form = document.getElementById('form-defi');
+  if(!form) return;
+  var btn = document.getElementById('d-btn');
+  var errBox = document.getElementById('d-errors');
+  function showErr(msg){ errBox.style.display='block'; errBox.textContent = msg; }
+  function loadEmailJS(cb){
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+    s.async = true;
+    s.onload = function(){ try{ emailjs.init(CFG.publicKey); }catch(e){} cb(); };
+    s.onerror = function(){ cb(new Error('load')); };
+    document.head.appendChild(s);
+  }
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    errBox.style.display='none';
+    var nom = (document.getElementById('d-nom').value||'').trim();
+    var email = (document.getElementById('d-email').value||'').trim();
+    var consent = document.getElementById('d-consent').checked;
+    var honeypot = form.querySelector('input[name=website]').value;
+    if(honeypot){ window.location.href = PAY_URL; return; } /* bot : ne pas notifier */
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ showErr('Un email valide est requis pour réserver votre place.'); return; }
+    if(!consent){ showErr('Merci d\'accepter le traitement de vos données (RGPD) pour vous inscrire.'); return; }
+    btn.disabled = true;
+    var old = btn.textContent;
+    btn.textContent = 'Redirection vers le paiement sécurisé…';
+    /* Notification auteur : ne bloque jamais le paiement */
+    loadEmailJS(function(err){
+      if(!err && window.emailjs){
+        var name = nom || (email.split('@')[0]||'').replace(/[._-]+/g,' ').trim();
+        name = name ? name.charAt(0).toUpperCase()+name.slice(1) : 'ami';
+        emailjs.send(CFG.serviceId, CFG.templateId, {
+          site:'Défi 30 jours IA',
+          name:name,
+          email:email,
+          question:'INSCRIPTION DÉFI 30 JOURS — Cohort #1 (39 €) — à suivre dans Stripe'
+        }).catch(function(){});
+      }
+      window.location.href = PAY_URL;
+    });
+  });
+})();
+</script>
+</body>
+</html>
