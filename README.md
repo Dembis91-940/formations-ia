@@ -26,7 +26,7 @@
 
 Chaque formation = **5-7 modules** (leçon dense + exemple réel + exercice pratique) + **checklist de fin de formation**. Sources Markdown : `01-*.md` → `07-*.md`. PDF : `pdf/`.
 
-> **Module bonus (hors Pack) — ChatGPT Ads** (valeur 29 €) : offert aux 10 premiers inscrits à la Direction (offre rentrée jusqu'au 14 septembre). Canal publicitaire OpenAI, libre-service ouvert en Europe le 31/08/2026 : format, intention conversationnelle, préparation de l'atterrissage, première campagne pas à pas, budgets réalistes. Source : `bonus-chatgpt-ads.md`. PDF : `pdf/bonus-chatgpt-ads.pdf`.
+> **Module bonus (hors Pack) — ChatGPT Ads** (valeur 29 €) : offert aux 10 premiers inscrits à la Direction. Canal publicitaire OpenAI, libre-service ouvert en Europe le 31/08/2026 : format, intention conversationnelle, préparation de l'atterrissage, première campagne pas à pas, budgets réalistes. Source : `bonus-chatgpt-ads.md`. PDF : `pdf/bonus-chatgpt-ads.pdf`.
 
 ### 2. Les offres (3 niveaux)
 
